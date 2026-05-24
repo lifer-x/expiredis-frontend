@@ -1,16 +1,50 @@
-# React + Vite
+# ExpiredIs — Frontend Source (dev) 💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Исходный код клиентской части веб-приложения **ExpiredIs**. Этот репозиторий содержит Single Page Application (SPA) на базе React и Vite, предназначенное для ведения разработки, изменения интерфейса и логики трекинга сроков годности.
 
-Currently, two official plugins are available:
+## 🛠️ Архитектура и Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Интерфейс:** React (компонентная архитектура)
+* **Сборка:** Vite (быстрая сборка и Hot Module Replacement)
+* **Маршрутизация:** React Router (клиентская навигация)
+* **Локализация:** Файл переводов JSON
+* **Пакетный менеджер:** npm
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Структура проекта
 
-## Expanding the ESLint configuration
+*   **`public/`** — Плоская папка для статических ресурсов (не обрабатываются сборщиком Vite).
+    *   `robots.txt` — Файл конфигурации для поисковых систем.
+    *   `*.png`, `*.jpg`, `*.svg` — Картинки, иконки и графические ассеты приложения (лежат в корне папки).
+*   **`src/`** — Исходный код приложения.
+    *   `/src/components/` — Переиспользуемые React-компоненты (формы, списки, карточки товаров).
+    *   `api.js` — Изолированный слой для выполнения HTTP-запросов к бэкенду.
+    *   `app.css` — Глобальные стили приложения.
+    *   `app.jsx` — Корневой компонент приложения, управляющий структурой и маршрутами.
+    *   `main.jsx` — Точка монтирования React-приложения в DOM.
+    *   `translations.json` — Файл со словарем для поддержки мультиязычности интерфейса.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Инструкция для разработки
+
+### 1. Установка зависимостей
+Перед началом работы разверните локальные пакеты:
+```bash
+npm install
+```
+
+### 2. Запуск локального сервера
+Запустите сервер разработки Vite:
+```bash
+npm run dev
+```
+Проект станет доступен в браузере по адресу: `http://localhost:5173`
+
+### 3. Компиляция для продакшна
+Чтобы составить оптимизированную продакшн-сборку, выполните:
+```bash
+npm run build
+```
+Vite скомпилирует весь код, проведет минификацию, перенесет все файлы из `public/` в корень сборки и сохранит результат в папку `dist`. Содержимое этой папки необходимо закомитить в продакшн-репозиторий **frontend**.
