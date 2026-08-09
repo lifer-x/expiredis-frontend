@@ -1,4 +1,4 @@
-# ExpiredIs — Frontend Source (dev) 💻
+# ExpiredIs — Frontend Source 💻
 
 Исходный код клиентской части веб-приложения **ExpiredIs**. Этот репозиторий содержит Single Page Application (SPA) на базе React и Vite, предназначенное для ведения разработки, изменения интерфейса и логики трекинга сроков годности.
 
